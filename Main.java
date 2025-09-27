@@ -8,6 +8,7 @@ public static void main (String[] args) {
     JFrame Janela = new JFrame ("Aps 4° Semestre");
 
     // - BOTÕES -
+    
     JButton botao_queimadas = new JButton("Queimadas");
     botao_queimadas.setBounds(0,0,100,100);
     JButton botao = new JButton("Num sei");
@@ -22,4 +23,5 @@ public static void main (String[] args) {
     Janela.add(new JLabel("Faz o L"));
     Janela.setVisible(true);
     
-}} 
+    }
+} 
