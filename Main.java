@@ -9,13 +9,23 @@ public static void main (String[] args) {
     
     // - CONFIGURAÇÕES DE JANELA -
     
-    Janela.setSize(1270,800);
+    Janela.setSize(1260,740);
     Janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    Janela.add(new JLabel("Faz o L"));
+    Janela.setResizable(false);
+
     Janela.setVisible(true);
 
-    // - BOTÕES -
+    // - BOTÕES E VISUAL -
     
+
+    JLabel TituloJanela = new JLabel("insira aq nome do nome da tela e deixar no topo");
+    TituloJanela.setBounds(500,0,500,500);
+    Janela.add(TituloJanela);
+
+    JLabel TelaDesc = new JLabel("descrição do projeto da tela princiapl");
+    TelaDesc.setBounds(500,200,100,100);
+    Janela.add(TelaDesc);
+
     JButton botao_queimadas = new JButton("Queimadas");
     botao_queimadas.setBounds(0,0,100,100);
     JButton botao = new JButton("Num sei");
