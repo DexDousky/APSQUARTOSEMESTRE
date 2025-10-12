@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class QuickSortCSV {
+public class TestQuick { // Esse é o de ordenar por ordem alfabética a primeira coluna. DEIXADO DE ESCANTEIO
 
     // Método principal para iniciar o Quicksort
     public static void quicksort(List<String[]> list, int low, int high) {
@@ -52,7 +52,7 @@ public class QuickSortCSV {
     // Método principal (main)
     public static void main(String[] args) {
         // --- 1. DEFINA O PATH DO SEU ARQUIVO ---
-        String filePath = "teste\\historico_pais_brasil.csv"; // Altere para o path real no seu computador!
+        String filePath = "arquivos\\historico_pais_brasil.csv"; // Altere para o path real no seu computador!
         
         List<String[]> data = new ArrayList<>();
         
