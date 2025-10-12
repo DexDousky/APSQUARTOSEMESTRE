@@ -42,7 +42,7 @@ public class BubbleSortQueimadas {
             return 0.0;
         }
     }
-
+    
     public static void main(String[] args) {
         String caminho = "arquivos\\historico_pais_brasil.csv";
         List<String[]> data = new ArrayList<>();
@@ -66,14 +66,12 @@ public class BubbleSortQueimadas {
             bubbleSort(data);
             long tempoFim = System.nanoTime();
 
-            System.out.println("--- Anos Ordenados pro TOTAL de Queimadas (MAIOR para MENOR) Bubble Sort ---");
-            System.out.println("Ano | Total de Queimadas");
-            System.out.println("-------------------------");
+            System.out.println("--- Anos Ordenados pro TOTAL de Queimadas (MAIOR para MENOR) Bubble Sort --- \n Ano | Total de Queimadas \n------------------------- ");
 
             data.forEach(row -> 
             System.out.printf("%s | %s%n", row[0].trim(), row[TotalColuna].trim()));
 
-            System.out.printf("\nOrdem executada em %.4f ms.%n", (tempoFim - tempoInicio) / 1_000_000.0); 
+            System.out.printf("\nOrdem executada em %.4f ms.%n", (tempoFim - tempoInicio) / 1_000_000.0); // 4f é para 4 casas decimais
             
         } catch (IOException e) {
             System.err.println("Erro ao ler o arquivo. Verifique se o arquivo '" + caminho + "' existe no diretório do projeto.");
