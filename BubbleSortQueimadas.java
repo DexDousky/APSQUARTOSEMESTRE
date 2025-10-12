@@ -16,8 +16,9 @@ public class BubbleSortQueimadas {
                 double valor1 = parseDoubleSafe(lista.get(j)[TotalColuna]);
                 double valor2 = parseDoubleSafe(lista.get(j + 1)[TotalColuna]);
 
+                // ordenação decrescente (maior para o menor)
                 if (valor1 < valor2) {
-                    troca(lista, j, j + 1);
+                    troca(lista, j, j + 1); // Troca os elementos 
                 }
             }
         }
@@ -73,8 +74,7 @@ public class BubbleSortQueimadas {
             System.out.printf("%s | %s%n", row[0].trim(), row[TotalColuna].trim()));
 
             System.out.printf("\nOrdem executada em %.4f ms.%n", (tempoFim - tempoInicio) / 1_000_000.0); 
-            //O que é esse %.4f ms.%? ele pega os milisegundos e transforma em segundos?
-
+            
         } catch (IOException e) {
             System.err.println("Erro ao ler o arquivo. Verifique se o arquivo '" + caminho + "' existe no diretório do projeto.");
             e.printStackTrace();
