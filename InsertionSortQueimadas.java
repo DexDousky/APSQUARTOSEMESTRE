@@ -67,9 +67,7 @@ public class InsertionSortQueimadas {
             InsertionSort(data);
             long tempoFim = System.nanoTime();
 
-            System.out.println("--- Anos Ordenados pelo Total de Queimadas (Insertion Sort) ---");
-            System.out.println("Ano | Total de Queimadas");
-            System.out.println("-------------------------");
+            System.out.println("--- Anos Ordenados pro TOTAL de Queimadas (MAIOR para MENOR) Insertion Sort --- \n Ano | Total de Queimadas \n------------------------- ");
 
             data.forEach(row -> {
                 System.out.printf("%s | %s%n", row[0].trim(), row[TotalColuna].trim());

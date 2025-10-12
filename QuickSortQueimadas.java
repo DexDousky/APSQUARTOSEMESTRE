@@ -110,14 +110,12 @@ public class QuickSortQueimadas { // ATENCAO ATECAO!! NÃO APAGAR!!!!!!!
             long tempoFim = System.nanoTime();
 
             // --- 3. EXIBIÇÃO DOS RESULTADOS ---
-            System.out.println("--- Anos Ordenados por TOTAL de Queimadas (MAIOR para MENOR) ---");
-            System.out.println("Ano | Total de Queimadas");
-            System.out.println("-------------------------");
+             System.out.println("--- Anos Ordenados pro TOTAL de Queimadas (MAIOR para MENOR) Quick Sort --- \n Ano | Total de Queimadas \n------------------------- ");
             
             data.forEach(row -> 
                 System.out.printf("%s | %s%n", row[0].trim(), row[TotalColuna].trim()));
 
-            System.out.printf("\nOrdenação concluída em %.4f ms.%n", (tempoFim - tempoInicio) / 1_000_000.0);
+            System.out.printf("\nOrdem executada em %.4f ms.%n", (tempoFim - tempoInicio) / 1_000_000.0);
 
         } catch (IOException e) {
             System.err.println("Erro ao ler o arquivo. Verifique se o arquivo '" + caminho + "' existe no diretório do projeto.");
