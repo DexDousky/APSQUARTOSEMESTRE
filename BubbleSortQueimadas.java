@@ -6,7 +6,7 @@ import java.util.List;
 
 public class BubbleSortQueimadas {
     
-    private static final int TotalColuna= 13;  // Índice da coluna 'Total'
+    private static final int TotalColuna = 13;
 
     public static void bubbleSort(List<String[]> lista) {
         int tamanhoLista = lista.size(); 
@@ -16,22 +16,19 @@ public class BubbleSortQueimadas {
                 double valor1 = parseDoubleSafe(lista.get(j)[TotalColuna]);
                 double valor2 = parseDoubleSafe(lista.get(j + 1)[TotalColuna]);
 
-                // ordenação decrescente (maior para o menor)
                 if (valor1 < valor2) {
-                    troca(lista, j, j + 1); // Troca os elementos 
+                    troca(lista, j, j + 1);
                 }
             }
         }
     }
 
-    // Método auxiliar para trocar dois elementos na lista
     private static void troca(List<String[]> lista, int i, int j) {
         String[] temporario = lista.get(i);
         lista.set(i, lista.get(j));
         lista.set(j, temporario);
     }
 
-    // Método para converter String para Double de forma segura 
     private static double parseDoubleSafe(String valor) {
         if (valor == null || valor.isEmpty()) {
             return 0.0;
@@ -41,6 +38,26 @@ public class BubbleSortQueimadas {
         } catch (NumberFormatException e) {
             return 0.0;
         }
+    }
+    
+    // NOVO MÉTODO PARA INTEGRAÇÃO COM A MAIN
+    public static List<String[]> executarOrdenacao() throws IOException {
+        String caminho = "arquivos\\historico_pais_brasil.csv";
+        List<String[]> data = new ArrayList<>();
+        
+        List<String> linhas = Files.readAllLines(Paths.get(caminho));
+        for (int i = 1; i < linhas.size(); i++) {
+            String linha = linhas.get(i);
+            if (linha.startsWith("Máximo") || linha.startsWith("Média") || linha.startsWith("Mínimo")) {
+                continue; 
+            }   
+            String[] fila = linha.trim().replaceAll("\\s*,\\s*", ",").split(",");
+            if (fila.length == 14) {
+                data.add(fila);  
+            }
+        }
+        bubbleSort(data);
+        return data;
     }
     
     public static void main(String[] args) {
@@ -54,9 +71,7 @@ public class BubbleSortQueimadas {
                 if (linha.startsWith("Máximo") || linha.startsWith("Média") || linha.startsWith("Mínimo")) {
                     continue; 
                 }   
-
                 String[] fila = linha.trim().replaceAll("\\s*,\\s*", ",").split(",");
-
                 if (fila.length == 14) {
                     data.add(fila);  
                 }
@@ -71,7 +86,7 @@ public class BubbleSortQueimadas {
             data.forEach(row -> 
             System.out.printf("%s | %s%n", row[0].trim(), row[TotalColuna].trim()));
 
-            System.out.printf("\nOrdem executada em %.4f ms.%n", (tempoFim - tempoInicio) / 1_000_000.0); // 4f é para 4 casas decimais
+            System.out.printf("\nOrdem executada em %.4f ms.%n", (tempoFim - tempoInicio) / 1_000_000.0);
             
         } catch (IOException e) {
             System.err.println("Erro ao ler o arquivo. Verifique se o arquivo '" + caminho + "' existe no diretório do projeto.");

@@ -6,7 +6,7 @@ import java.util.List;
 
 public class InsertionSortQueimadas {
 
-    private static final int TotalColuna = 13; // Índice da coluna 'Total'
+    private static final int TotalColuna = 13;
 
     public static void InsertionSort(List<String[]> lista) {
         int tamanhoLista = lista.size();
@@ -16,7 +16,6 @@ public class InsertionSortQueimadas {
             double valorAtual = parseDoubleSafe(elementoAtual[TotalColuna]);
             int j = i - 1;
 
-            // Loop de comparação e deslocamento: Move elementos da sub-lista ordenada (j) que são MENORES que o elemento atual (currentElement) para a direita.
             while (j >= 0) {
                 double valorComparado = parseDoubleSafe(lista.get(j)[TotalColuna]);
 
@@ -28,7 +27,7 @@ public class InsertionSortQueimadas {
                     break;
                 }
             }
-            lista.set(j + 1, elementoAtual); // Insere o elemento atual na posição correta
+            lista.set(j + 1, elementoAtual);
         }
     }
 
@@ -43,6 +42,26 @@ public class InsertionSortQueimadas {
         }
     }
 
+    // NOVO MÉTODO PARA INTEGRAÇÃO COM A MAIN
+    public static List<String[]> executarOrdenacao() throws IOException {
+        String caminho = "arquivos\\historico_pais_brasil.csv";
+        List<String[]> data = new ArrayList<>();
+        
+        List<String> linhas = Files.readAllLines(Paths.get(caminho));
+        for (int i = 1; i < linhas.size(); i++) {
+            String linha = linhas.get(i);
+            if (linha.startsWith("Máximo") || linha.startsWith("Média") || linha.startsWith("Mínimo")) {
+                continue; 
+            }   
+            String[] fila = linha.trim().replaceAll("\\s*,\\s*", ",").split(",");
+            if (fila.length == 14) {
+                data.add(fila);
+            }
+        }
+        InsertionSort(data);
+        return data;
+    }
+
     public static void main(String[] args) {
         String caminho = "arquivos\\historico_pais_brasil.csv";
         List<String[]> data = new ArrayList<>();
@@ -55,9 +74,7 @@ public class InsertionSortQueimadas {
                 if (linha.startsWith("Máximo") || linha.startsWith("Média") || linha.startsWith("Mínimo")) {
                     continue; 
                 }   
-
                 String[] fila = linha.trim().replaceAll("\\s*,\\s*", ",").split(",");
-
                 if (fila.length == 14) {
                     data.add(fila);
                 }
