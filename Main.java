@@ -43,7 +43,7 @@ public class Main extends Object {
         return janela;
     }
 
-    private static void adicionarComponentes(JFrame janela) {
+    private static void adicionarComponentes(JFrame janela) { 
         
         JLabel tituloJanela = new JLabel("SISTEMA DE ANÁLISE DE DADOS");
         tituloJanela.setBounds(230, 50, 800, 40);
