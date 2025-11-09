@@ -16,7 +16,7 @@ public class BubbleSortQueimadas {
                 double valor1 = parseDoubleSafe(lista.get(j)[TotalColuna]);
                 double valor2 = parseDoubleSafe(lista.get(j + 1)[TotalColuna]);
 
-                if (valor1 < valor2) {
+                if (valor1 < valor2) { // se muda o sinal, muda a forma de ordenação
                     troca(lista, j, j + 1);
                 }
             }
@@ -42,7 +42,7 @@ public class BubbleSortQueimadas {
     
     // NOVO MÉTODO PARA INTEGRAÇÃO COM A MAIN
     public static List<String[]> executarOrdenacao() throws IOException {
-        String caminho = "arquivos\\historico_pais_brasil.csv";
+        String caminho = "arquivos\\ordenada.csv";
         List<String[]> dados = new ArrayList<>();
         
         List<String> linhas = Files.readAllLines(Paths.get(caminho));

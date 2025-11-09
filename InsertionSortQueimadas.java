@@ -19,7 +19,7 @@ public class InsertionSortQueimadas {
             while (j >= 0) {
                 double valorComparado = parseDoubleSafe(lista.get(j)[TotalColuna]);
 
-                if (valorComparado < valorAtual) {
+                if (valorComparado > valorAtual) { // se muda o sinal, muda a forma de ordenação
                     lista.set(j + 1, lista.get(j));
                     j--;
                 } 
@@ -44,7 +44,7 @@ public class InsertionSortQueimadas {
 
     // NOVO MÉTODO PARA INTEGRAÇÃO COM A MAIN
     public static List<String[]> executarOrdenacao() throws IOException {
-        String caminho = "arquivos\\historico_pais_brasil.csv";
+        String caminho = "arquivos\\ordenada.csv";
         List<String[]> dados = new ArrayList<>();
         
         List<String> linhas = Files.readAllLines(Paths.get(caminho));

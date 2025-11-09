@@ -22,7 +22,7 @@ public class QuickSortQueimadas {
         for (int j = menor; j < maior; j++) {
             double valorAtual = parseDoubleSafe(lista.get(j)[TotalColuna]);
 
-            if (valorAtual >= pivoValor) {
+            if (valorAtual >= pivoValor) { // se muda o sinal, muda a forma de ordenação
                 i++;
                 troca(lista, i, j);
             }
@@ -51,7 +51,7 @@ public class QuickSortQueimadas {
 
     // NOVO MÉTODO PARA INTEGRAÇÃO COM A MAIN
     public static List<String[]> executarOrdenacao() throws IOException {
-        String caminho = "arquivos\\historico_pais_brasil.csv";
+        String caminho = "arquivos\\ordenada.csv";
         List<String[]> dados = new ArrayList<>();
         
         List<String> linhas = Files.readAllLines(Paths.get(caminho));

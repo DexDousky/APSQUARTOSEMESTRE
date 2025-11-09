@@ -165,7 +165,7 @@ public class Main extends Object {
     private static void exibirDadosBrutos() {
         areaResultados.append("=== DADOS BRUTOS DO ARQUIVO CSV ===\n\n");
         try {
-            String caminho = "arquivos\\historico_pais_brasil.csv";
+            String caminho = "arquivos\\ordenada.csv";
             List<String> linhas = Files.readAllLines(Paths.get(caminho));
             
             for (String linha : linhas) {
