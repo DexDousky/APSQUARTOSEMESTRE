@@ -42,7 +42,7 @@ public class BubbleSortQueimadas {
     
     // NOVO MÉTODO PARA INTEGRAÇÃO COM A MAIN
     public static List<String[]> executarOrdenacao() throws IOException {
-        String caminho = "arquivos\\ordenada.csv";
+        String caminho = "arquivos\\ordenada.csv"; // alteramos aqui para mudar o caminho das listas
         List<String[]> dados = new ArrayList<>();
         
         List<String> linhas = Files.readAllLines(Paths.get(caminho));
