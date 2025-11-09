@@ -22,10 +22,9 @@ import javax.swing.*;
 public class Main extends Object {
 
     private static JTextArea areaResultados;
-
-    /* 
-        Configuração da janela principal e adição dos componentes (botões, área de texto, etc.)
-    */
+     
+    //Configuração da janela principal e adição dos componentes (botões, área de texto, etc.)
+    
     public static void main(String[] args) {
         JFrame janela = criarJanela("APS 4° Semestre - Sistema de Análise de Dados usando Sorts!", 1270, 800);
         adicionarComponentes(janela);
