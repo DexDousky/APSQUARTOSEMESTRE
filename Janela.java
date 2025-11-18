@@ -19,7 +19,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import javax.swing.*;
 
-public class Main extends Object {
+public class Janela extends Object {
 
     private static JTextArea areaResultados;
      
